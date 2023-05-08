@@ -5,6 +5,8 @@ import { shortenAddress } from "../utils/shortenAddress";
 import { Loader } from ".";
 import moment from "moment";
 import { ethers } from "ethers";
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import "react-lazy-load-image-component/src/effects/blur.css";
 const { ethereum } = window;
 
 const companyCommonStyles =

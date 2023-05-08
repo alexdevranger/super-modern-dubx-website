@@ -5,7 +5,7 @@ import {
   Welcome,
   Footer,
   Services,
-  Transactions,
+  ContactUs,
   Project,
   Ai,
   Roadmap,
@@ -28,6 +28,7 @@ const Home = () => {
       <Roadmap />
       <Ai />
       <DBank />
+      <ContactUs />
     </div>
   );
 };

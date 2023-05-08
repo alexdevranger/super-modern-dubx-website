@@ -1,12 +1,20 @@
 import React from "react";
 import arLogo from "../images/ar-logo_optimized.webp";
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import "react-lazy-load-image-component/src/effects/blur.css";
 
 function Arabian() {
   return (
     <div className="flex w-full justify-center items-center">
       <div className="flex mf:flex-row flex-col items-center justify-between md:p-20 py-12 px-4 mt-20">
         <div className="flex-1 flex flex-col justify-start items-center">
-          <img src={arLogo} alt="logo" className="" />
+          <LazyLoadImage
+            effect="blur"
+            loading="lazy"
+            decoding="async"
+            alt="Arabianchain Logo"
+            src={arLogo}
+          />
         </div>
         <div className="flex-1 flex flex-col justify-start items-start">
           <h1

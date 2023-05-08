@@ -5,6 +5,8 @@ import { RiHeart2Fill } from "react-icons/ri";
 import dbank from "../images/digital_bank_optimized.webp";
 import floating from "../images/floating.gif";
 import security from "../images/security.gif";
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import "react-lazy-load-image-component/src/effects/blur.css";
 
 const DBank = () => (
   <div className="flex w-full justify-center items-center gradient-bg-services">
@@ -34,10 +36,19 @@ const DBank = () => (
       <div className="flex flex-col justify-center items-start w-full md:w-9/12 w-11/12 md:flex-row">
         <div className="flex flex-1 flex-col justify-center items-center">
           <h3 className="text-3xl my-4 gradient-title">Super App</h3>
-          <div className="w-[90%] p-[10px] m-auto">
-            <img
+          <div className="w-[90%] p-[10px] m-auto text-center">
+            {/* <img
               src={floating}
               alt="float"
+              className="rounded-lg w-[250px] sm:w-[400px]"
+              style={{ textAlign: "center", margin: "auto" }}
+            /> */}
+            <LazyLoadImage
+              effect="blur"
+              loading="lazy"
+              decoding="async"
+              alt="floating"
+              src={floating}
               className="rounded-lg w-[250px] sm:w-[400px]"
               style={{ textAlign: "center", margin: "auto" }}
             />
@@ -51,10 +62,19 @@ const DBank = () => (
         </div>
         <div className="flex flex-1 flex-col justify-center items-center">
           <h3 className="text-3xl my-4 gradient-title">Digital Wallets</h3>
-          <div className="w-[90%] p-[10px]  m-auto">
-            <img
+          <div className="w-[90%] p-[10px] m-auto text-center">
+            {/* <img
               src={security}
               alt="security"
+              className="rounded-lg w-[250px] sm:w-[400px]"
+              style={{ textAlign: "center", margin: "auto" }}
+            /> */}
+            <LazyLoadImage
+              effect="blur"
+              loading="lazy"
+              decoding="async"
+              alt="security"
+              src={security}
               className="rounded-lg w-[250px] sm:w-[400px]"
               style={{ textAlign: "center", margin: "auto" }}
             />

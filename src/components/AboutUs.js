@@ -1,6 +1,8 @@
 import React from "react";
 import aboutus from "../images/about_optimized.webp";
 import WaterWave from "react-water-wave";
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import "react-lazy-load-image-component/src/effects/blur.css";
 
 const AboutUs = () => {
   return (
@@ -42,7 +44,13 @@ const AboutUs = () => {
               </p>
             </div>
             <div className="flex flex-col justify-start items-center">
-              <img src={aboutus} alt="logo" className="" />
+              <LazyLoadImage
+                effect="blur"
+                loading="lazy"
+                decoding="async"
+                alt="About us"
+                src={aboutus}
+              />
             </div>
           </div>
         )}

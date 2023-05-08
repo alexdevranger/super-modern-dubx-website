@@ -3,6 +3,8 @@ import { BsShieldFillCheck } from "react-icons/bs";
 import { BiSearchAlt } from "react-icons/bi";
 import { RiHeart2Fill } from "react-icons/ri";
 import ai from "../images/ai_optimized.webp";
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import "react-lazy-load-image-component/src/effects/blur.css";
 
 const Ai = () => (
   <div className="flex w-full justify-center items-center bg-[#0399DB]">

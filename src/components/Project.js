@@ -3,7 +3,9 @@ import { BsShieldFillCheck } from "react-icons/bs";
 import { BiSearchAlt } from "react-icons/bi";
 import { RiHeart2Fill } from "react-icons/ri";
 import cubes from "../images/cubes_optimized.webp";
-import newlogo from "../images/goldDUBX-novi.png";
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import "react-lazy-load-image-component/src/effects/blur.css";
+import newlogo from "../images/logo-novi.png";
 
 const Project = () => (
   <div className="flex w-full justify-center items-center gradient-bg-services">
@@ -40,7 +42,13 @@ const Project = () => (
       </div>
 
       <div className="flex-1 flex flex-col justify-start items-center pt-[40px]">
-        <img src={cubes} alt="logo" className="" />
+        <LazyLoadImage
+          effect="blur"
+          loading="lazy"
+          decoding="async"
+          alt="cubes"
+          src={cubes}
+        />
       </div>
     </div>
   </div>
