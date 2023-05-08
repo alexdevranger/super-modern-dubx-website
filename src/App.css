@@ -1,0 +1,175 @@
+
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
+* html {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.gradient-bg-welcome {
+  background-color:#0f0e13;
+  background-image: 
+    radial-gradient(at 0% 0%, hsla(253,16%,7%,1) 0, transparent 50%), 
+    radial-gradient(at 50% 0%, hsla(225,39%,30%,1) 0, transparent 50%), 
+    radial-gradient(at 100% 0%, hsla(265.85deg 62.81% 38.69%) 0, transparent 50%);
+}
+
+.gradient-bg-services {
+  background-color:#0f0e13;
+  background-image: 
+    radial-gradient(at 0% 0%, hsla(253,16%,7%,1) 0, transparent 50%), 
+    radial-gradient(at 50% 100%, hsla(225,39%,25%,1) 0, transparent 50%);
+}
+
+.gradient-bg-transactions {
+  background-color: #0f0e13;
+  background-image: 
+    radial-gradient(at 0% 100%, hsla(253,16%,7%,1) 0, transparent 50%), 
+    radial-gradient(at 50% 0%, hsla(225,39%,25%,1) 0, transparent 50%);
+}
+
+.gradient-bg-footer {
+  background-color: #0f0e13;
+  background-image: 
+    radial-gradient(at 0% 100%, hsla(253,16%,7%,1) 0, transparent 53%), 
+    radial-gradient(at 50% 150%, hsla(339,49%,30%,1) 0, transparent 50%);
+}
+
+.blue-glassmorphism {
+  background: rgb(68, 72, 86, 0.4);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+/* white glassmorphism */
+.white-glassmorphism {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  /* background-image: url('./images/type-gradient-0.4.png'); */
+    color: transparent;
+    background-size: 150%;
+}
+
+.eth-card {
+  background-color:#a099ff;
+  background-image: 
+    radial-gradient(at 83% 67%, rgb(152, 231, 156) 0, transparent 58%), 
+    radial-gradient(at 67% 20%, hsla(357,94%,71%,1) 0, transparent 59%), 
+    radial-gradient(at 88% 35%, hsla(222,81%,65%,1) 0, transparent 50%), 
+    radial-gradient(at 31% 91%, hsla(9,61%,61%,1) 0, transparent 52%), 
+    radial-gradient(at 27% 71%, hsla(336,91%,65%,1) 0, transparent 49%), 
+    radial-gradient(at 74% 89%, hsla(30,98%,65%,1) 0, transparent 51%), 
+    radial-gradient(at 53% 75%, hsla(174,94%,68%,1) 0, transparent 45%);
+}
+
+.text-gradient {
+  background-color: #fff;
+  background-image: radial-gradient(at 4% 36%, hsla(0,0%,100%,1) 0, transparent 53%), radial-gradient(at 100% 60%, rgb(0, 0, 0) 0, transparent 50%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+h1 {
+  font-family: Poppins, sans-serif;
+  background-image: url(https://crl2020.imgix.net/img/type-gradient.png?auto=format%2Ccompress);
+  background-clip: text;
+  color: transparent;
+  -webkit-background-clip: text;
+  animation: animate 3.6s infinite alternate;
+  line-height: 1.2;
+  font-weight: 700 !important;
+  margin-bottom: 20px;
+}
+.gradient-title {
+  font-family: Poppins, sans-serif;
+  background-image: url(https://crl2020.imgix.net/img/type-gradient.png?auto=format%2Ccompress);
+  background-clip: text;
+  color: transparent;
+  background-size: 150%;
+  -webkit-background-clip: text;
+  animation: animate 3.6s infinite alternate;
+  line-height: 1.2;
+  font-weight: 700 !important;
+  margin-bottom: 20px;
+}
+.blue-violet {
+  background: blueviolet;
+    padding: 15px;
+    border-radius: 20px;
+    background-image: radial-gradient(at 0% 0%, hsla(253,16%,7%,1) 0, transparent 60%), radial-gradient(at 50% 0%, hsla(225,39%,30%,1) 0, transparent 60%), radial-gradient(at 100% 0%, hsla(265.85deg 62.81% 38.69%) 0, transparent 60%);
+}
+.roadmap-controls {
+  background: transparent !important
+}
+.roadmap-card {
+  justify-content: center !important;
+}
+@media screen and (min-width: 900px) {
+  #timeline-main-wrapper {
+    width: 800px;
+  }
+}
+@media screen and (min-width: 300px) and (max-width: 799px) {
+  #timeline-main-wrapper {
+    width: 100%;
+  }
+}
+
+
+
+.roadmap-title.active {
+  padding: 14px !important;
+}
+.roadmap-card-title {
+  display: flex !important;
+  justify-content: center !important;
+}
+.roadmap-card-text {
+  padding: 0.5rem 0.5rem 0px !important;
+  line-height: 1.1;
+  margin: 0 !important;
+}
