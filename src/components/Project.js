@@ -2,7 +2,7 @@ import React from "react";
 import { BsShieldFillCheck } from "react-icons/bs";
 import { BiSearchAlt } from "react-icons/bi";
 import { RiHeart2Fill } from "react-icons/ri";
-import cubes from "../images/cubes.png";
+import cubes from "../images/cubes_optimized.webp";
 import newlogo from "../images/goldDUBX-novi.png";
 
 const Project = () => (

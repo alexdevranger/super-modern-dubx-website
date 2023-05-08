@@ -1,5 +1,5 @@
 import React from "react";
-import arLogo from "../images/ar-logo.png";
+import arLogo from "../images/ar-logo_optimized.webp";
 
 function Arabian() {
   return (

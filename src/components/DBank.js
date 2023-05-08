@@ -2,7 +2,7 @@ import React from "react";
 import { BsShieldFillCheck } from "react-icons/bs";
 import { BiSearchAlt } from "react-icons/bi";
 import { RiHeart2Fill } from "react-icons/ri";
-import dbank from "../images/digital_bank.png";
+import dbank from "../images/digital_bank_optimized.webp";
 import floating from "../images/floating.gif";
 import security from "../images/security.gif";
 
