@@ -13,7 +13,7 @@ const ContactUs = () => {
           style={{ width: "100%", height: "100%" }}
           children={() => (
             <div className="flex flex-col xl:flex-row lg:flex-col md:flex-col sm:flex-col min-[300px]:flex-col max-[639px]:flex-col items-center justify-between md:p-20 py-12 px-4">
-              <div className="flex flex-col justify-center items-center xl:w-[50%] lg:w-[70%] w:full md:w-[100%] m-auto sm:w-full pl-[60px]">
+              <div className="flex flex-col justify-center items-center xl:w-[50%] lg:w-[70%] w:full md:w-[100%] m-auto sm:w-full">
                 <h1
                   className="text-3xl sm:text-5xl py-2 font-bold text-center"
                   style={{ fontWeight: "700!important" }}
@@ -21,7 +21,7 @@ const ContactUs = () => {
                   <span className="text-white">NEW OFFICE</span>
                 </h1>
                 <div className="white-glassmorphism p-10">
-                  <h3 className="text-white text-3xl my-4 underline">
+                  <h3 className="text-white text-3xl my-4 underline text-center">
                     Dubai Address
                   </h3>
                   <p className="text-center my-2 text-white font-light">
@@ -41,7 +41,7 @@ const ContactUs = () => {
                   <span className="text-white">MAIN OFFICE</span>
                 </h1>
                 <div className="white-glassmorphism p-10">
-                  <h3 className="text-white text-3xl my-4 underline">
+                  <h3 className="text-white text-3xl my-4 underline text-center">
                     Kingdom of Bahrain
                   </h3>
                   <p className="text-center my-2 text-white font-light">
@@ -54,6 +54,9 @@ const ContactUs = () => {
                     Block 346, Manama-Water Bay
                   </p>
                 </div>
+                <h3 className="text-white text-2xl my-6 text-center">
+                  info@arabianchain.org
+                </h3>
                 {/* <h1
                   className="text-3xl sm:text-5xl py-2 font-bold text-center mt-10"
                   style={{ fontWeight: "700!important" }}
@@ -75,7 +78,7 @@ const ContactUs = () => {
                   </p> */}
                 {/* </div> */}
               </div>
-              <div className="flex flex-col justify-start items-center">
+              <div className="flex flex-col justify-start items-center mt-10">
                 <LazyLoadImage
                   effect="blur"
                   loading="lazy"

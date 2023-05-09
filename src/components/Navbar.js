@@ -1,5 +1,5 @@
 import React from "react";
-import { HiMenuAlt4 } from "react-icons/hi";
+import { HiOutlineMenu } from "react-icons/hi";
 import { AiOutlineClose } from "react-icons/ai";
 import { Link } from "react-router-dom";
 import Send from "../pages/Send";
@@ -42,7 +42,7 @@ const Navbar = () => {
       </div>
       <div className="flex relative">
         {!toggleMenu && (
-          <HiMenuAlt4
+          <HiOutlineMenu
             fontSize={28}
             className="text-white md:hidden cursor-pointer"
             onClick={() => setToggleMenu(true)}
@@ -63,7 +63,7 @@ const Navbar = () => {
             <li className="text-xl w-full my-2">
               <AiOutlineClose onClick={() => setToggleMenu(false)} />
             </li>
-            {["Market", "Exchange", "Tutorials", "Wallets"].map(
+            {/* {["Market", "Exchange", "Tutorials", "Wallets"].map(
               (item, index) => (
                 <NavBarItem
                   key={item + index}
@@ -71,7 +71,22 @@ const Navbar = () => {
                   classprops="my-2 text-lg"
                 />
               )
-            )}
+            )} */}
+            <li className="mx-4 my-8 cursor-pointer">
+              <Link to="/">HOME</Link>
+            </li>
+            <li className="mx-4 my-8 cursor-pointer">
+              <Link to="/about-us">ABOUT US</Link>
+            </li>
+            <li className="mx-4 my-8 cursor-pointer">
+              <Link to="/send">EASY-SEND</Link>
+            </li>
+            {/* <li className="mx-4 cursor-pointer">
+            <Link to="/send">EASY-BUY</Link>
+          </li> */}
+            <li className="mx-4 my-8 bg-[#1BF8EC] py-2 px-7 mx-4 rounded-full cursor-pointer hover:bg-[#1BF8EC] text-[#14235C]">
+              Login
+            </li>
           </ul>
         )}
       </div>

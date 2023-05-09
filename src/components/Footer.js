@@ -6,7 +6,7 @@ import "react-lazy-load-image-component/src/effects/blur.css";
 
 const Footer = () => (
   <div className="w-full flex md:justify-center justify-between items-center flex-col p-4 gradient-bg-footer pt-[100px]">
-    <div className="w-full flex sm:flex-row flex-col justify-between items-center my-4">
+    <div className="w-full flex md:flex-row flex-col justify-between items-center my-4">
       <div className="flex flex-[0.5] justify-center items-center">
         <LazyLoadImage
           effect="blur"
@@ -17,8 +17,8 @@ const Footer = () => (
           className="w-32"
         />
       </div>
-      <div className="flex flex-1 justify-evenly items-center flex-wrap sm:mt-0 mt-5 w-full">
-        <div className="text-white text-base text-left mx-2 cursor-pointer">
+      <div className="flex flex-1 flex-col sm:flex-row justify-evenly md:items-center items-start content-center flex-wrap sm:mt-0 mt-5 w-full">
+        <div className="text-white text-base text-left mx-2 cursor-pointer mt-6 md:mt-0">
           <a href="https://explorer.arabianchain.org/#/" target="_blank">
             <p>Explorer</p>
           </a>
@@ -32,7 +32,7 @@ const Footer = () => (
             <p>Desktop Wallet</p>
           </a>
         </div>
-        <div className="text-white text-base text-left mx-2 cursor-pointer">
+        <div className="text-white text-base text-left mx-2 cursor-pointer mt-6 md:mt-0">
           <a href="http://dubxpool.arabianchain.org/" target="_blank">
             <p>Pool</p>
           </a>
@@ -46,7 +46,7 @@ const Footer = () => (
             <p>Twitter</p>
           </a>
         </div>
-        <div className="text-white text-base text-left mx-2 cursor-pointer">
+        <div className="text-white text-base text-left mx-2 cursor-pointer mt-6 md:mt-0">
           <p>Office no 302,</p>
           <p>Building 551, Road 4612,</p>
           <p>Block 346, Manama-Water Bay,</p>
