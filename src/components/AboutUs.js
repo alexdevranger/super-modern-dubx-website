@@ -12,7 +12,7 @@ const AboutUs = () => {
         style={{ width: "100%", height: "100%" }}
         children={() => (
           <div className="flex flex-col xl:flex-row lg:flex-col md:flex-col sm:flex-col min-[300px]:flex-col max-[639px]:flex-col items-center justify-between md:p-20 py-12 px-4">
-            <div className="flex flex-col justify-start items-start blue-violet xl:w-[50%] lg:w-[70%] w:full md:w-[100%] m-auto sm:w-full pl-[60px]">
+            <div className="flex flex-col justify-start items-start blue-violet xl:w-[50%] lg:w-[70%] w:full md:w-[100%] m-auto sm:w-full pl-[60px] p-[40px]">
               <h1
                 className="text-3xl sm:text-5xl py-2 font-bold"
                 style={{ fontWeight: "700!important" }}

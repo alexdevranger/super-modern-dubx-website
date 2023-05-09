@@ -19,11 +19,20 @@ const Project = () => (
           <br />
           Dubxcoin?
           <div className="ml-[20px] w-[100px] sm:ml-[70px] sm:w-[150px]">
-            <img
+            {/* <img
               src={newlogo}
               alt="logo"
               className="w-full"
               style={{ textAlign: "center", margin: "auto" }}
+            /> */}
+            <LazyLoadImage
+              effect="blur"
+              loading="lazy"
+              decoding="async"
+              alt="logo"
+              src={newlogo}
+              style={{ textAlign: "center", margin: "auto" }}
+              className="w-full"
             />
           </div>
         </h1>

@@ -12,3 +12,4 @@ export { default as Arabian } from "./Arabian";
 export { default as AboutUs } from "./AboutUs";
 export { default as AnimatedRoutes } from "./AnimatedRoutes";
 export { default as ContactUs } from "./ContactUs";
+export { default as EasyBuy } from "./EasyBuy";

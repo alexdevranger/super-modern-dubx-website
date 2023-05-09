@@ -242,7 +242,7 @@ const Welcome = () => {
               className="flex flex-row justify-center items-center my-5 bg-[#1BF8EC] p-3 rounded-full cursor-pointer  hover:bg-white hover:border-[#1BF8EC] "
             >
               {/* <AiFillPlayCircle className="text-white mr-2" /> */}
-              <p className="text-[#14235C] hover:text-[#1BF8EC] text-base font-semibold">
+              <p className="text-[#4a2084] hover:text-[#1BF8EC] text-base font-semibold">
                 Connect Wallet
               </p>
             </button>

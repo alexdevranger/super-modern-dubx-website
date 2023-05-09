@@ -15,7 +15,7 @@ const ContactUs = () => {
             <div className="flex flex-col xl:flex-row lg:flex-col md:flex-col sm:flex-col min-[300px]:flex-col max-[639px]:flex-col items-center justify-between md:p-20 py-12 px-4">
               <div className="flex flex-col justify-center items-center xl:w-[50%] lg:w-[70%] w:full md:w-[100%] m-auto sm:w-full">
                 <h1
-                  className="text-3xl sm:text-5xl py-2 font-bold text-center"
+                  className="text-3xl sm:text-4xl py-2 font-bold text-center"
                   style={{ fontWeight: "700!important" }}
                 >
                   <span className="text-white">NEW OFFICE</span>
@@ -35,7 +35,7 @@ const ContactUs = () => {
                   </p>
                 </div>
                 <h1
-                  className="text-3xl sm:text-5xl py-2 font-bold text-center mt-10"
+                  className="text-3xl sm:text-4xl py-2 font-bold text-center mt-10"
                   style={{ fontWeight: "700!important" }}
                 >
                   <span className="text-white">MAIN OFFICE</span>

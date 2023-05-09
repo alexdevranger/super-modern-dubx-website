@@ -32,9 +32,9 @@ const Navbar = () => {
           <li className="mx-4 cursor-pointer">
             <Link to="/send">EASY-SEND</Link>
           </li>
-          {/* <li className="mx-4 cursor-pointer">
-            <Link to="/send">EASY-BUY</Link>
-          </li> */}
+          <li className="mx-4 cursor-pointer">
+            <Link to="/easy-buy">EASY-BUY</Link>
+          </li>
           <li className="bg-[#1BF8EC] py-2 px-7 mx-4 rounded-full cursor-pointer hover:bg-[#1BF8EC] text-[#14235C]">
             Login
           </li>
@@ -81,10 +81,10 @@ const Navbar = () => {
             <li className="mx-4 my-8 cursor-pointer">
               <Link to="/send">EASY-SEND</Link>
             </li>
-            {/* <li className="mx-4 cursor-pointer">
-            <Link to="/send">EASY-BUY</Link>
-          </li> */}
-            <li className="mx-4 my-8 bg-[#1BF8EC] py-2 px-7 mx-4 rounded-full cursor-pointer hover:bg-[#1BF8EC] text-[#14235C]">
+            <li className="mx-4 my-8 cursor-pointer">
+              <Link to="/easy-buy">EASY-BUY</Link>
+            </li>
+            <li className="mx-4 my-8 bg-[#1BF8EC] py-2 px-7 mx-4 rounded-full cursor-pointer hover:bg-[#1BF8EC] text-[#4a2084] font-bold">
               Login
             </li>
           </ul>
