@@ -23,7 +23,7 @@ function Arabian() {
           >
             About
             <br />
-            ArabianChain Technology
+            ArabianChain Technologies
           </h1>
           <h3 className="text-white text-3xl my-4">
             It is the first public, decentralized and consensus-driven

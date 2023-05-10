@@ -55,7 +55,7 @@ const EasyBuy = () => {
                         <div className="screen-body-item">
                           <div className="app-form">
                             <form
-                              action="https://getform.io/f/c2caa14b-77a8-4637-a517-a5d0c4c6ec63"
+                              action="https://getform.io/f/94e17b34-0e44-454d-8091-6870f40224f2"
                               method="POST"
                             >
                               <div className="app-form-group">
