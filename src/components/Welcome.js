@@ -7,6 +7,8 @@ import moment from "moment";
 import { ethers } from "ethers";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
+import { formatBalance, formatChainAsNum } from "../utils/metamaskUtils";
+import detectEthereumProvider from "@metamask/detect-provider";
 const { ethereum } = window;
 
 const companyCommonStyles =
@@ -24,6 +26,14 @@ const Input = ({ placeholder, name, type, value, handleChange }) => (
 );
 
 const Welcome = () => {
+  const [hasProvider, setHasProvider] = useState(null);
+  const initialState = { accounts: [], balance: "", chainId: "" };
+  const [wallet, setWallet] = useState(initialState);
+
+  const [isConnecting, setIsConnecting] = useState(false);
+  const [error, setError] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
+
   const createProvider = () => {
     const provider = new ethers.providers.Web3Provider(ethereum);
     return provider;
@@ -36,107 +46,176 @@ const Welcome = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [transact, setTransact] = useState({});
   const [balanceAddr, setBalanceAddr] = useState("");
-  const [metamaskLocked, setMetamaskLocked] = useState(false);
-  const [isInstalled, setIsInstalled] = useState(false);
+  // const [metamaskLocked, setMetamaskLocked] = useState(false);
+  // const [isInstalled, setIsInstalled] = useState(false);
   const handleChange = (e, name) => {
     setformData((prevState) => ({ ...prevState, [name]: e.target.value }));
   };
-
-  const checkIfWalletIsConnected = async () => {
-    try {
-      if (!ethereum) setIsInstalled(false);
-      if (ethereum) setIsInstalled(true);
-
-      const accounts = await ethereum.request({ method: "eth_accounts" });
-
-      if (accounts.length) {
-        setCurrentAccount(accounts[0]);
-        let provider = createProvider();
-        let balance = await provider.getBalance(accounts[0]);
-        let balanceFormated = ethers.utils.formatEther(balance);
-        setBalanceAddr(balanceFormated);
-      } else {
-        console.log("No accounts found");
-        setMetamaskLocked(true);
-      }
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
   useEffect(() => {
-    if (!ethereum) return;
-    async function getAccounts() {
-      const accounts = await ethereum.request({
-        method: "eth_accounts",
-      });
-      if (accounts && accounts.length > 0) {
-        setCurrentAccount(accounts[0]);
-        setMetamaskLocked(false);
+    const refreshAccounts = (accounts) => {
+      if (accounts.length > 0) {
+        updateWallet(accounts);
       } else {
-        console.log("MetaMask is locked");
-        setMetamaskLocked(true);
+        // if length 0, user is disconnected
+        setWallet(initialState);
       }
-    }
+    };
 
-    async function handleAccountsChanged(newAccounts) {
-      setCurrentAccount(newAccounts[0]);
-      let provider = createProvider();
-      let balance = await provider.getBalance(newAccounts[0]);
-      let balanceFormated = ethers.utils.formatEther(balance);
-      setBalanceAddr(balanceFormated);
-      setMetamaskLocked(false);
-    }
-    // Fetch initial accounts
-    getAccounts();
+    const refreshChain = (chainId) => {
+      setWallet((wallet) => ({ ...wallet, chainId }));
+    };
 
-    // Set up the event listener for account changes
-    ethereum.on("accountsChanged", handleAccountsChanged);
+    const getProvider = async () => {
+      const provider = await detectEthereumProvider({ silent: true });
+      setHasProvider(Boolean(provider));
 
-    // Clean up the event listener when the component is unmounted
+      if (provider) {
+        const accounts = await window.ethereum.request({
+          method: "eth_accounts",
+        });
+        refreshAccounts(accounts);
+        ethereum.on("accountsChanged", refreshAccounts);
+        ethereum.on("chainChanged", refreshChain);
+      }
+    };
+
+    getProvider();
+
     return () => {
-      ethereum.removeListener("accountsChanged", handleAccountsChanged);
+      ethereum?.removeListener("accountsChanged", refreshAccounts);
+      ethereum?.removeListener("chainChanged", refreshChain);
     };
   }, []);
 
-  const connectWallet = async () => {
-    try {
-      if (!ethereum) setIsInstalled(false);
-      if (ethereum) setIsInstalled(true);
-
-      const accounts = await ethereum.request({
-        method: "eth_requestAccounts",
-      });
-
-      if (accounts && accounts.length) {
-        setCurrentAccount(accounts[0]);
-        setMetamaskLocked(false);
-      } else {
-        setMetamaskLocked(true);
-      }
-      window.location.reload();
-    } catch (error) {
-      throw new Error("No ethereum object");
-    }
-  };
-
-  const checkIsMetamaskUnlocked = async () => {
-    const acc = await ethereum.request({
-      method: "eth_requestAccounts",
+  const updateWallet = async (accounts) => {
+    const balance = formatBalance(
+      await window.ethereum.request({
+        method: "eth_getBalance",
+        params: [accounts[0], "latest"],
+      })
+    );
+    setBalanceAddr(balance);
+    const chainId = await window.ethereum.request({
+      method: "eth_chainId",
     });
-    if (acc && acc.length) {
-      console.log("false metamask is not locked");
-      return false;
-    } else {
-      console.log("false metamask is locked");
-      return true;
-    }
+    setWallet({ accounts, balance, chainId });
   };
+  console.log(balanceAddr);
+
+  const handleConnect = async () => {
+    setIsConnecting(true);
+    await window.ethereum
+      .request({
+        method: "eth_requestAccounts",
+      })
+      .then((accounts) => {
+        setError(false);
+        updateWallet(accounts);
+      })
+      .catch((err) => {
+        setError(true);
+        setErrorMessage(err.message);
+      });
+    setIsConnecting(false);
+  };
+
+  const disableConnect = Boolean(wallet) && isConnecting;
+
+  // const checkIfWalletIsConnected = async () => {
+  //   try {
+  //     if (!ethereum) setIsInstalled(false);
+  //     if (ethereum) setIsInstalled(true);
+
+  //     const accounts = await ethereum.request({ method: "eth_accounts" });
+
+  //     if (accounts.length) {
+  //       setCurrentAccount(accounts[0]);
+  //       let provider = createProvider();
+  //       let balance = await provider.getBalance(accounts[0]);
+  //       let balanceFormated = ethers.utils.formatEther(balance);
+  //       setBalanceAddr(balanceFormated);
+  //     } else {
+  //       console.log("No accounts found");
+  //       setMetamaskLocked(true);
+  //     }
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
+  // };
+
+  // useEffect(() => {
+  //   if (!ethereum) return;
+  //   async function getAccounts() {
+  //     const accounts = await ethereum.request({
+  //       method: "eth_accounts",
+  //     });
+  //     if (accounts && accounts.length > 0) {
+  //       setCurrentAccount(accounts[0]);
+  //       setMetamaskLocked(false);
+  //     } else {
+  //       console.log("MetaMask is locked");
+  //       setMetamaskLocked(true);
+  //     }
+  //   }
+
+  //   async function handleAccountsChanged(newAccounts) {
+  //     setCurrentAccount(newAccounts[0]);
+  //     let provider = createProvider();
+  //     let balance = await provider.getBalance(newAccounts[0]);
+  //     let balanceFormated = ethers.utils.formatEther(balance);
+  //     setBalanceAddr(balanceFormated);
+  //     setMetamaskLocked(false);
+  //   }
+  //   // Fetch initial accounts
+  //   getAccounts();
+
+  //   // Set up the event listener for account changes
+  //   ethereum.on("accountsChanged", handleAccountsChanged);
+
+  //   // Clean up the event listener when the component is unmounted
+  //   return () => {
+  //     ethereum.removeListener("accountsChanged", handleAccountsChanged);
+  //   };
+  // }, []);
+
+  // const connectWallet = async () => {
+  //   try {
+  //     if (!ethereum) setIsInstalled(false);
+  //     if (ethereum) setIsInstalled(true);
+
+  //     const accounts = await ethereum.request({
+  //       method: "eth_requestAccounts",
+  //     });
+
+  //     if (accounts && accounts.length) {
+  //       setCurrentAccount(accounts[0]);
+  //       setMetamaskLocked(false);
+  //     } else {
+  //       setMetamaskLocked(true);
+  //     }
+  //     window.location.reload();
+  //   } catch (error) {
+  //     throw new Error("No ethereum object");
+  //   }
+  // };
+
+  // const checkIsMetamaskUnlocked = async () => {
+  //   const acc = await ethereum.request({
+  //     method: "eth_requestAccounts",
+  //   });
+  //   if (acc && acc.length) {
+  //     console.log("false metamask is not locked");
+  //     return false;
+  //   } else {
+  //     console.log("false metamask is locked");
+  //     return true;
+  //   }
+  // };
 
   const sendTransaction = async () => {
     try {
       if (ethereum) {
-        setIsInstalled(true);
+        // setIsInstalled(true);
         const { addressTo, amount } = formData;
         // const transactionsContract = createEthereumContract();
         const parsedAmount = ethers.utils.parseEther(amount);
@@ -167,12 +246,12 @@ const Welcome = () => {
     }
   };
 
-  useEffect(() => {
-    checkIfWalletIsConnected();
-  }, []);
+  // useEffect(() => {
+  //   checkIfWalletIsConnected();
+  // }, []);
 
   const [txObject, setTxObject] = useState({});
-  const [locked, setLocked] = useState(false);
+  //const [locked, setLocked] = useState(false);
 
   const handleSubmit = (e) => {
     const { addressTo, amount } = formData;
@@ -210,16 +289,16 @@ const Welcome = () => {
       console.log("transact not exist yet");
     }
   }, [transact]);
-  useEffect(() => {
-    const testIsLocked = () => {
-      if (checkIsMetamaskUnlocked) {
-        setLocked(false);
-      } else {
-        setLocked(true);
-      }
-    };
-    testIsLocked();
-  });
+  // useEffect(() => {
+  //   const testIsLocked = () => {
+  //     if (checkIsMetamaskUnlocked) {
+  //       setLocked(false);
+  //     } else {
+  //       setLocked(true);
+  //     }
+  //   };
+  //   testIsLocked();
+  // });
 
   return (
     <div className="flex w-full justify-center items-center mt-[100px]">
@@ -238,10 +317,10 @@ const Welcome = () => {
             <br /> 3. Send
             {/* {import.meta.env.VITE_API_URL} */}
           </p>
-          {!currentAccount && (
+          {window.ethereum?.isMetaMask && wallet.accounts.length < 1 && (
             <button
               type="button"
-              onClick={connectWallet}
+              onClick={handleConnect}
               className="flex flex-row justify-center items-center my-5 bg-[#1BF8EC] p-3 rounded-full cursor-pointer  hover:bg-white hover:border-[#1BF8EC] "
             >
               {/* <AiFillPlayCircle className="text-white mr-2" /> */}
@@ -278,14 +357,16 @@ const Welcome = () => {
                 </div>
                 <BsInfoCircle fontSize={17} color="#fff" />
               </div>
-              {currentAccount && balanceAddr && (
+              {wallet.accounts[0] && balanceAddr && (
                 <div className="relative">
                   <p className="text-white font-light text-sm">
-                    {shortenAddress(currentAccount)}
+                    {shortenAddress(wallet.accounts[0])}
                   </p>
-                  <p className="text-white font-semibold text-lg mt-1">
-                    Dubxcoin
-                  </p>
+                  {formatChainAsNum(wallet.chainId) === 3269 && (
+                    <p className="text-white font-semibold text-lg mt-1">
+                      Dubxcoin
+                    </p>
+                  )}
                   {balanceAddr && (
                     <>
                       <p className="absolute right-1.5 bottom-7 text-white font-semibold text-lg mt-1">
@@ -300,7 +381,18 @@ const Welcome = () => {
               )}
             </div>
           </div>
-          {isInstalled && metamaskLocked && (
+          {/* <div>Wallet Accounts: {wallet.accounts[0]}</div>
+          <div>Wallet Balance: {wallet.balance}</div> */}
+          {/* <div>Hex ChainId: {wallet.chainId}</div> */}
+          {ethereum?.isMetaMask && wallet.chainId && (
+            <div className="text-white pb-[20px]">
+              ChainId: {formatChainAsNum(wallet.chainId)} <br />
+              {formatChainAsNum(wallet.chainId) === 3269
+                ? " Network: Dubxcoin"
+                : " Change Network to Dubxcoin"}
+            </div>
+          )}
+          {ethereum?.isMetaMask && wallet.accounts.length < 1 && (
             <div>
               <p className="text-white mb-[20px]">
                 Please unlock your Metamask wallet
@@ -308,7 +400,12 @@ const Welcome = () => {
               </p>
             </div>
           )}
-          {!isInstalled && (
+          {error /* New code block */ && (
+            <div onClick={() => setError(false)}>
+              <strong>Error:</strong> {errorMessage}
+            </div>
+          )}
+          {!hasProvider && (
             <div>
               <p className="text-white mb-[20px]">
                 Please install Metamask wallet

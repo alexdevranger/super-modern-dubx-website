@@ -30,9 +30,9 @@ function Arabian() {
             blockchain in the MENA region
           </h3>
           <p className="text-left my-2 text-white font-light md:w-9/12 w-11/12 text-base">
-            Arabianchain Technology is a Bahrain based venture that is unlocking
-            the potential of tomorrow’s economy by enabling today’s blockchain
-            innovation.
+            Arabianchain Technologies is a Bahrain based venture that is
+            unlocking the potential of tomorrow’s economy by enabling today’s
+            blockchain innovation.
           </p>
           <p className="text-left my-2 text-white font-light md:w-9/12 w-11/12 text-base">
             It allows for self-executing and globally accessible smart contracts

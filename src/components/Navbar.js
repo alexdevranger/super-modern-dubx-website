@@ -23,19 +23,19 @@ const Navbar = () => {
           {/* {["Market", "Exchange", "Tutorials", "Wallets"].map((item, index) => (
           <NavBarItem key={item + index} title={item} />
         ))} */}
-          <li className="mx-4 cursor-pointer">
-            <Link to="/">HOME</Link>
+          <li className="mx-4 cursor-pointer text-[20px]">
+            <Link to="/">home</Link>
           </li>
-          <li className="mx-4 cursor-pointer">
-            <Link to="/about-us">ABOUT US</Link>
+          <li className="mx-4 cursor-pointer text-[20px]">
+            <Link to="/about-us">about us</Link>
           </li>
-          <li className="mx-4 cursor-pointer">
-            <Link to="/send">EASY-SEND</Link>
+          <li className="mx-4 cursor-pointer text-[20px]">
+            <Link to="/send">easy-send</Link>
           </li>
-          <li className="mx-4 cursor-pointer">
-            <Link to="/easy-buy">EASY-BUY</Link>
+          <li className="mx-4 cursor-pointer text-[20px]">
+            <Link to="/easy-buy">easy-buy</Link>
           </li>
-          <li className="bg-[#1BF8EC] py-2 px-7 mx-4 rounded-full cursor-pointer hover:bg-[#1BF8EC] text-[#14235C]">
+          <li className="bg-[#1BF8EC] py-2 px-7 mx-4 rounded-full cursor-pointer hover:bg-[#1BF8EC] text-[#14235C] text-[20px]">
             Login
           </li>
         </ul>
