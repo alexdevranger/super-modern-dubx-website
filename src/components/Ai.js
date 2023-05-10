@@ -17,17 +17,22 @@ const Ai = () => (
           className="text-3xl sm:text-5xl py-2 font-bold"
           style={{ fontWeight: "700!important", color: "#3e3cc3" }}
         >
-          Why we use AI?
+          AI & Blockchain
         </h1>
         <h3 className="text-white text-3xl my-4">
           We want to train our AI to improve our blockchain
         </h3>
         <p className="text-left my-2 text-white font-light md:w-9/12 w-11/12 text-base">
-          with the goal of building a decentralized, consensus-driven, peer to
-          peer, open source, blockchain-based platform for distributed
-          applications. ArabianChain tech will leverage and improve blockchain
-          technology and build a full-featured application platform on top of
-          it.
+          AI and blockchain are two rapidly advancing technologies that have the
+          potential to revolutionize many industries. AI can enhance blockchain
+          technologies by enabling more efficient and secure data processing,
+          analysis, and decision-making.
+        </p>
+        <p className="text-left my-2 text-white font-light md:w-9/12 w-11/12 text-base">
+          Another area where AI can improve blockchain is through predictive
+          analysis. By analyzing large amounts of data, AI can help identify
+          patterns and trends that can be used to optimize blockchain
+          operations.
         </p>
       </div>
     </div>

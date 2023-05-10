@@ -5,7 +5,7 @@ import { RiHeart2Fill } from "react-icons/ri";
 import cubes from "../images/cubes_optimized.webp";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
-import newlogo from "../images/logo-novi.png";
+import newlogo from "../images/logo-novi.webp";
 
 const Project = () => (
   <div className="flex w-full justify-center items-center gradient-bg-services">
@@ -41,7 +41,12 @@ const Project = () => (
         </h3>
 
         <p className="text-left my-2 text-white font-light md:w-9/12 w-11/12 text-base">
-          with the goal of building a decentralized, consensus-driven, peer to
+          As one of the most popular blockchain projects, Dubxcoin is driving
+          innovation and change across a wide range of industries, from finance
+          and healthcare to identity management and supply chain logistics.
+        </p>
+        <p className="text-left my-2 text-white font-light md:w-9/12 w-11/12 text-base">
+          With the goal of building a decentralized, consensus-driven, peer to
           peer, open source, blockchain-based platform for distributed
           applications. ArabianChain tech will leverage and improve blockchain
           technology and build a full-featured application platform on top of

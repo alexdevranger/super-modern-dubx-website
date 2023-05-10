@@ -12,7 +12,7 @@ const ServiceCard = ({ color, title, icon, subtitle }) => (
     </div>
     <div className="ml-5 flex flex-col flex-1">
       <h3 className="mt-2 text-white text-lg">{title}</h3>
-      <p className="mt-1 text-white text-sm md:w-9/12">{subtitle}</p>
+      <p className="mt-1 text-white text-sm md:w-10/12">{subtitle}</p>
     </div>
   </div>
 );
@@ -30,29 +30,29 @@ const Services = () => (
           continue to improve
         </h1>
         <p className="text-left my-2 text-white font-light md:w-9/12 w-11/12 text-base">
-          The best choice for buying and selling your crypto assets, with the
-          various super friendly services we offer
+          The best choice for individuals who may not have access to traditional
+          banking services.
         </p>
       </div>
 
       <div className="flex-1 flex flex-col justify-start items-center">
         <ServiceCard
           color="bg-[#2952E3]"
-          title="Security gurantee"
+          title="Supply Chain Management"
           icon={<BsShieldFillCheck fontSize={21} className="text-white" />}
-          subtitle="Security is guranteed. We always maintain privacy and maintain the quality of our products"
+          subtitle="By tracking products from the source of raw materials to the end customer, businesses can ensure the authenticity and quality of their products, while also reducing costs and improving efficiency."
         />
         <ServiceCard
           color="bg-[#8945F8]"
-          title="Best exchange rates"
+          title="Identity Verification"
           icon={<BiSearchAlt fontSize={21} className="text-white" />}
-          subtitle="Security is guranteed. We always maintain privacy and maintain the quality of our products"
+          subtitle="With blockchain-based identity verification, individuals can control their own personal data and decide who has access to it."
         />
         <ServiceCard
           color="bg-[#F84550]"
-          title="Fastest transactions"
+          title="Payment and Remittance"
           icon={<RiHeart2Fill fontSize={21} className="text-white" />}
-          subtitle="Security is guranteed. We always maintain privacy and maintain the quality of our products"
+          subtitle="By using cryptocurrencies or stablecoins, individuals can send and receive payments across borders without the need for intermediaries like banks. "
         />
       </div>
     </div>

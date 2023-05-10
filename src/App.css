@@ -166,11 +166,15 @@ h1 {
 .roadmap-card-title {
   display: flex !important;
   justify-content: center !important;
+  text-align: center !important;
 }
 .roadmap-card-text {
   padding: 0.5rem 0.5rem 0px !important;
   line-height: 1.1;
   margin: 0 !important;
+}
+.roadmap-card-text p {
+  text-align: center !important;
 }
 .background {
   display: flex;
@@ -310,7 +314,6 @@ h1 {
   border-bottom: 1px solid #666;
   color: #ddd;
   font-size: 14px;
-  text-transform: uppercase;
   outline: none;
   transition: border-color .2s;
 }

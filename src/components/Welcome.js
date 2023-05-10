@@ -37,13 +37,15 @@ const Welcome = () => {
   const [transact, setTransact] = useState({});
   const [balanceAddr, setBalanceAddr] = useState("");
   const [metamaskLocked, setMetamaskLocked] = useState(false);
+  const [isInstalled, setIsInstalled] = useState(false);
   const handleChange = (e, name) => {
     setformData((prevState) => ({ ...prevState, [name]: e.target.value }));
   };
 
   const checkIfWalletIsConnected = async () => {
     try {
-      if (!ethereum) return alert("Please install MetaMask.");
+      if (!ethereum) setIsInstalled(false);
+      if (ethereum) setIsInstalled(true);
 
       const accounts = await ethereum.request({ method: "eth_accounts" });
 
@@ -63,10 +65,7 @@ const Welcome = () => {
   };
 
   useEffect(() => {
-    if (!ethereum) {
-      console.log("MetaMask is not installed");
-      return false;
-    }
+    if (!ethereum) return;
     async function getAccounts() {
       const accounts = await ethereum.request({
         method: "eth_accounts",
@@ -102,11 +101,13 @@ const Welcome = () => {
 
   const connectWallet = async () => {
     try {
-      if (!ethereum) return alert("Please install MetaMask.");
+      if (!ethereum) setIsInstalled(false);
+      if (ethereum) setIsInstalled(true);
 
       const accounts = await ethereum.request({
         method: "eth_requestAccounts",
       });
+
       if (accounts && accounts.length) {
         setCurrentAccount(accounts[0]);
         setMetamaskLocked(false);
@@ -135,6 +136,7 @@ const Welcome = () => {
   const sendTransaction = async () => {
     try {
       if (ethereum) {
+        setIsInstalled(true);
         const { addressTo, amount } = formData;
         // const transactionsContract = createEthereumContract();
         const parsedAmount = ethers.utils.parseEther(amount);
@@ -168,7 +170,6 @@ const Welcome = () => {
   useEffect(() => {
     checkIfWalletIsConnected();
   }, []);
-  console.log(metamaskLocked);
 
   const [txObject, setTxObject] = useState({});
   const [locked, setLocked] = useState(false);
@@ -210,14 +211,16 @@ const Welcome = () => {
     }
   }, [transact]);
   useEffect(() => {
-    if (checkIsMetamaskUnlocked) {
-      setLocked(false);
-    } else {
-      setLocked(true);
-    }
+    const testIsLocked = () => {
+      if (checkIsMetamaskUnlocked) {
+        setLocked(false);
+      } else {
+        setLocked(true);
+      }
+    };
+    testIsLocked();
   });
-  console.log(locked);
-  console.log(metamaskLocked);
+
   return (
     <div className="flex w-full justify-center items-center mt-[100px]">
       <div className="flex mf:flex-row flex-col items-start justify-between md:p-20 py-12 px-4">
@@ -297,11 +300,18 @@ const Welcome = () => {
               )}
             </div>
           </div>
-          {metamaskLocked && (
+          {isInstalled && metamaskLocked && (
             <div>
               <p className="text-white mb-[20px]">
                 Please unlock your Metamask wallet
                 <br /> by clicking button CONNECT WALLET
+              </p>
+            </div>
+          )}
+          {!isInstalled && (
+            <div>
+              <p className="text-white mb-[20px]">
+                Please install Metamask wallet
               </p>
             </div>
           )}

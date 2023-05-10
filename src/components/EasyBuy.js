@@ -4,10 +4,14 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
-import newlogo from "../images/logo-novi.png";
+import newlogo from "../images/logo-novi.webp";
 import WaterWave from "react-water-wave";
 
 const EasyBuy = () => {
+  const [fullname, setFullname] = useState("");
+  const [email, setEmail] = useState("");
+  const [amount, setAmount] = useState("");
+  const [message, setMessage] = useState("");
   return (
     <div style={{ width: "100%", minHeight: "93vh", overflow: "hidden" }}>
       <WaterWave
@@ -50,35 +54,64 @@ const EasyBuy = () => {
                         </div>
                         <div className="screen-body-item">
                           <div className="app-form">
-                            <div className="app-form-group">
+                            <form
+                              action="https://getform.io/f/c2caa14b-77a8-4637-a517-a5d0c4c6ec63"
+                              method="POST"
+                            >
+                              <div className="app-form-group">
+                                <input
+                                  className="app-form-control uppercase"
+                                  placeholder="NAME"
+                                  type="text"
+                                  name="fullname"
+                                  value={fullname}
+                                  onChange={(e) => setFullname(e.target.value)}
+                                />
+                              </div>
+                              <div className="app-form-group">
+                                <input
+                                  className="app-form-control"
+                                  placeholder="EMAIL"
+                                  type="email"
+                                  name="email"
+                                  value={email}
+                                  onChange={(e) => setEmail(e.target.value)}
+                                />
+                              </div>
+                              <div className="app-form-group">
+                                <input
+                                  className="app-form-control"
+                                  placeholder="AMOUNT DUBX"
+                                  type="number"
+                                  name="amount"
+                                  value={amount}
+                                  onChange={(e) => setAmount(e.target.value)}
+                                />
+                              </div>
+                              <div className="app-form-group message">
+                                <input
+                                  className="app-form-control"
+                                  placeholder="MESSAGE"
+                                  type="text"
+                                  name="message"
+                                  value={message}
+                                  onChange={(e) => setMessage(e.target.value)}
+                                />
+                              </div>
                               <input
-                                className="app-form-control"
-                                placeholder="NAME"
+                                type="hidden"
+                                name="_gotcha"
+                                style={{ display: "none !important" }}
                               />
-                            </div>
-                            <div className="app-form-group">
-                              <input
-                                className="app-form-control"
-                                placeholder="EMAIL"
-                              />
-                            </div>
-                            <div className="app-form-group">
-                              <input
-                                className="app-form-control"
-                                placeholder="AMOUNT DUBX"
-                              />
-                            </div>
-                            <div className="app-form-group message">
-                              <input
-                                className="app-form-control"
-                                placeholder="MESSAGE"
-                              />
-                            </div>
-                            <div className="app-form-group buttons">
-                              <button className="mx-4 my-8 bg-[#1BF8EC] py-2 px-7 mx-4 rounded-full cursor-pointer hover:bg-[#1BF8EC] text-[#4a2084] font-bold">
-                                SEND
-                              </button>
-                            </div>
+                              <div className="app-form-group buttons">
+                                <button
+                                  type="submit"
+                                  className="mx-4 my-8 bg-[#1BF8EC] py-2 px-7 mx-4 rounded-full cursor-pointer hover:bg-[#1BF8EC] text-[#4a2084] font-bold"
+                                >
+                                  SEND
+                                </button>
+                              </div>
+                            </form>
                           </div>
                         </div>
                       </div>
