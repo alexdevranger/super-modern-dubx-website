@@ -6,7 +6,7 @@ import { Chrono } from "react-chrono";
 import data from "../utils/roadmapData";
 
 const Roadmap = () => (
-  <div className="flex w-full justify-center items-center gradient-bg-services">
+  <div className="flex w-full justify-center items-center">
     <div className="flex mf:flex-row flex-col items-center justify-between md:p-20 py-12 px-4 mt-20">
       <div className="flex flex-col justify-start items-center m-auto">
         <h1 className="text-3xl sm:text-5xl py-2 font-bold text-center mb-20">

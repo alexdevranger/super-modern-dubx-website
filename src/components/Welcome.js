@@ -1,5 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
 import { BsInfoCircle } from "react-icons/bs";
+import { HiZoomIn } from "react-icons/hi";
 import Dubx from "../images/logo.png";
 import { shortenAddress } from "../utils/shortenAddress";
 import { Loader } from ".";
@@ -9,6 +10,8 @@ import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
 import { formatBalance, formatChainAsNum } from "../utils/metamaskUtils";
 import detectEthereumProvider from "@metamask/detect-provider";
+import smallMetamask from "../images/metamaskSetup_-_small_optimized.webp";
+import bigMetamask from "../images/metamaskSetup_optimized.webp";
 const { ethereum } = window;
 
 const companyCommonStyles =
@@ -33,6 +36,7 @@ const Welcome = () => {
   const [isConnecting, setIsConnecting] = useState(false);
   const [error, setError] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
+  const [showLargeImage, setShowLargeImage] = useState(false);
 
   const createProvider = () => {
     const provider = new ethers.providers.Web3Provider(ethereum);
@@ -51,6 +55,9 @@ const Welcome = () => {
   const handleChange = (e, name) => {
     setformData((prevState) => ({ ...prevState, [name]: e.target.value }));
   };
+  const handleClick = () => {
+    setShowLargeImage(!showLargeImage);
+  };
   useEffect(() => {
     const refreshAccounts = (accounts) => {
       if (accounts.length > 0) {
@@ -67,7 +74,7 @@ const Welcome = () => {
 
     const getProvider = async () => {
       const provider = await detectEthereumProvider({ silent: true });
-      setHasProvider(Boolean(provider));
+      setHasProvider(provider);
 
       if (provider) {
         const accounts = await window.ethereum.request({
@@ -302,7 +309,7 @@ const Welcome = () => {
 
   return (
     <div className="flex w-full justify-center items-center mt-[100px]">
-      <div className="flex mf:flex-row flex-col items-start justify-between md:p-20 py-12 px-4">
+      <div className="flex mf:flex-row flex-col mf:items-start justify-center mf:justify-between md:p-20 py-12 px-4">
         <div className="flex flex-1 justify-start items-start flex-col mf:mr-10">
           <h1 className="text-3xl sm:text-5xl py-1">
             Easy Send DUBX <br /> across the world
@@ -346,10 +353,70 @@ const Welcome = () => {
               Blockchain
             </div>
           </div>
+          <div className="flex w-full mt-10 items-center justify-between">
+            <div className="flex flex-col">
+              <h1 className="text-2xl">
+                Add DUBIXCOIN <br />
+                NETWORK to Metamask
+              </h1>
+              {/* <p className="text-white">
+                Networks &#62; Add a network &#62; Add a network manually
+              </p> */}
+            </div>
+            <div className="relative w-[150px] overflow-hidden ml-[1rem] cursor-pointer">
+              <LazyLoadImage
+                effect="blur"
+                loading="lazy"
+                decoding="async"
+                alt="logo"
+                src={smallMetamask}
+                style={{ width: "100%", height: "100%", objectFit: "cover" }}
+              />
+              <div
+                style={{
+                  position: "absolute",
+                  top: 0,
+                  left: 0,
+                  width: "100%",
+                  height: "100%",
+                  backgroundColor: "rgba(0, 0, 0, 0.5)",
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                }}
+                onClick={handleClick}
+              >
+                <HiZoomIn size={32} color="white" />
+              </div>
+            </div>
+            {showLargeImage && (
+              <div
+                style={{
+                  position: "fixed",
+                  top: 0,
+                  left: 0,
+                  width: "100%",
+                  height: "100%",
+                  backgroundColor: "rgba(0, 0, 0, 0.5)",
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  zIndex: "20",
+                }}
+                onClick={handleClick}
+              >
+                <img
+                  src={bigMetamask}
+                  alt="Large"
+                  className="w-full md:w-[700px] h-auto z-5"
+                />
+              </div>
+            )}
+          </div>
         </div>
 
-        <div className="flex flex-col flex-1 items-center justify-start w-full mf:mt-0 mt-10 md:ml-[13rem] sm:ml-[0]">
-          <div className="p-3 flex justify-end items-start flex-col rounded-xl h-40 sm:w-72 w-full my-5 eth-card .white-glassmorphism ">
+        <div className="flex flex-col flex-1 items-center justify-center mf:justify-start w-full mf:mt-0 mt-10 mf:ml-[13rem] sm:ml-[0]">
+          <div className="p-3 flex justify-end items-start flex-col rounded-xl h-40 sm:w-72 w-full my-5 eth-card white-glassmorphism ">
             <div className="flex justify-between flex-col w-full h-full">
               <div className="flex justify-between items-start">
                 <div className="w-10 h-10 rounded-full border-2 border-white flex justify-center items-center">
@@ -412,18 +479,22 @@ const Welcome = () => {
               </p>
             </div>
           )}
-          <div className="p-5 sm:w-96 w-full flex flex-col justify-start items-center blue-glassmorphism">
+          <div className="p-5 sm:w-96 w-full flex flex-col justify-start items-center white-glassmorphism">
             <Input
               placeholder="Address To"
               name="addressTo"
               type="text"
               handleChange={handleChange}
+              className="text-white"
+              style={{ color: "white!important" }}
             />
             <Input
               placeholder="Amount (DUBX)"
               name="amount"
               type="number"
               handleChange={handleChange}
+              className="text-[#fff]"
+              style={{ color: "white!important" }}
             />
 
             <div className="h-[1px] w-full bg-gray-400 my-2" />

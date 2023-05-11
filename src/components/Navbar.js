@@ -1,7 +1,7 @@
 import React from "react";
 import { HiOutlineMenu } from "react-icons/hi";
 import { AiOutlineClose } from "react-icons/ai";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import Send from "../pages/Send";
 
 import logo from "../images/logoAr.png";
@@ -19,21 +19,36 @@ const Navbar = () => {
         <img src={logo} alt="logo" className="w-64 cursor-pointer" />
       </div>
       <div className="md:flex-[0.5] flex flex-initial justify-end items-center">
-        <ul className="text-white md:flex hidden list-none flex-row  items-center flex-initial">
-          {/* {["Market", "Exchange", "Tutorials", "Wallets"].map((item, index) => (
-          <NavBarItem key={item + index} title={item} />
-        ))} */}
-          <li className="mx-4 cursor-pointer text-[20px]">
-            <Link to="/">home</Link>
+        <ul className="text-white md:flex hidden list-none flex-row  items-center flex-initial navUl">
+          <li className="mx-2 cursor-pointer text-[20px]">
+            {/* <Link to="/">home</Link> */}
+            <NavLink exact to="/" activeclassname="active-link">
+              home
+            </NavLink>
           </li>
-          <li className="mx-4 cursor-pointer text-[20px]">
-            <Link to="/about-us">about us</Link>
+          <li className="mx-2 cursor-pointer text-[20px]">
+            {/* <Link to="/about-us">about us</Link> */}
+            <NavLink to="/about-us" activeclassname="active-link">
+              about us
+            </NavLink>
           </li>
-          <li className="mx-4 cursor-pointer text-[20px]">
-            <Link to="/send">easy-send</Link>
+          <li className="mx-2 cursor-pointer text-[20px]">
+            {/* <Link to="/roadmap">roadmap</Link> */}
+            <NavLink to="/roadmap" activeclassname="active-link">
+              roadmap
+            </NavLink>
           </li>
-          <li className="mx-4 cursor-pointer text-[20px]">
-            <Link to="/easy-buy">easy-buy</Link>
+          <li className="mx-2 cursor-pointer text-[20px]">
+            {/* <Link to="/send">easy-send</Link> */}
+            <NavLink to="/send" activeclassname="active-link">
+              easy-send
+            </NavLink>
+          </li>
+          <li className="mx-2 cursor-pointer text-[20px]">
+            {/* <Link to="/easy-buy">easy-buy</Link> */}
+            <NavLink to="/easy-buy" activeclassname="active-link">
+              easy-buy
+            </NavLink>
           </li>
           <li className="bg-[#1BF8EC] py-2 px-7 mx-4 rounded-full cursor-pointer hover:bg-[#1BF8EC] text-[#14235C] text-[20px]">
             Login
@@ -77,6 +92,9 @@ const Navbar = () => {
             </li>
             <li className="mx-4 my-8 cursor-pointer">
               <Link to="/about-us">ABOUT US</Link>
+            </li>
+            <li className="mx-4 my-8 cursor-pointer">
+              <Link to="/about-us">ROADMAP</Link>
             </li>
             <li className="mx-4 my-8 cursor-pointer">
               <Link to="/send">EASY-SEND</Link>

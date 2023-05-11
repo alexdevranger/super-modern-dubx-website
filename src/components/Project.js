@@ -2,7 +2,8 @@ import React from "react";
 import { BsShieldFillCheck } from "react-icons/bs";
 import { BiSearchAlt } from "react-icons/bi";
 import { RiHeart2Fill } from "react-icons/ri";
-import cubes from "../images/cubes_optimized.webp";
+//import cubes from "../images/cubes_optimized.webp";
+import cubes from "../images/gold-coin.png";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
 import newlogo from "../images/logo-novi.webp";
@@ -18,13 +19,7 @@ const Project = () => (
           What is
           <br />
           Dubxcoin?
-          <div className="ml-[20px] w-[100px] sm:ml-[70px] sm:w-[150px]">
-            {/* <img
-              src={newlogo}
-              alt="logo"
-              className="w-full"
-              style={{ textAlign: "center", margin: "auto" }}
-            /> */}
+          {/* <div className="ml-[20px] w-[100px] sm:ml-[70px] sm:w-[150px]">
             <LazyLoadImage
               effect="blur"
               loading="lazy"
@@ -34,7 +29,7 @@ const Project = () => (
               style={{ textAlign: "center", margin: "auto" }}
               className="w-full"
             />
-          </div>
+          </div> */}
         </h1>
         <h3 className="text-white text-3xl my-4">
           It is an open source, community-based project
@@ -54,7 +49,7 @@ const Project = () => (
         </p>
       </div>
 
-      <div className="flex-1 flex flex-col justify-start items-center pt-[40px]">
+      <div className="flex-1 flex flex-col justify-start items-center bs">
         <LazyLoadImage
           effect="blur"
           loading="lazy"

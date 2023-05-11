@@ -342,7 +342,34 @@ h1 {
 .blockchain {
   background-image: url(../src/images/blockchain-16-9.svg);
 }
-
+.navUl li a {
+  padding: 10px;
+  border: 1px solid #3F51B5;
+  border-radius: 6px;
+}
+.navUl li a.active {
+  padding: 10px;
+  background: #1bf8ec;
+  color: black;
+  border: 3px solid #3F51B5;
+  border-radius: 6px;
+}
+.navUl li a:hover {
+  padding: 10px;
+  background: #1bf8ec;
+  color: black;
+  border: 1px solid #3F51B5;
+  border-radius: 6px;
+}
+.rocket {
+  position: absolute;
+    right: -109px;
+    top: -53px;
+    font-size: 89px;
+}
+.bs {
+  box-shadow: 0 12px 17px rgb(0 0 0 / 88%), 0 8px 12px rgb(0 0 0);
+}
 @media screen and (max-width: 600px) {
   .screen-body {
     flex-direction: column;

@@ -2,6 +2,7 @@ import Home from "./pages/Home";
 import Send from "./pages/Send";
 import About from "./pages/About";
 import Buy from "./pages/Buy";
+import RoadmapPage from "./pages/RoadmapPage";
 import { Footer } from "./components";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import "./App.css";
@@ -15,6 +16,7 @@ function App() {
           <Route exact path="/send" element={<Send />} />
           <Route exact path="/about-us" element={<About />} />
           <Route exact path="/easy-buy" element={<Buy />} />
+          <Route exact path="/roadmap" element={<RoadmapPage />} />
         </Routes>
         <Footer />
       </Router>
