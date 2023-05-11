@@ -49,7 +49,7 @@ const Project = () => (
         </p>
       </div>
 
-      <div className="flex-1 flex flex-col justify-start items-center bs">
+      <div className="flex-1 flex flex-col justify-start items-center bs mt-[40px] lg:mt-0">
         <LazyLoadImage
           effect="blur"
           loading="lazy"

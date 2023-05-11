@@ -14,3 +14,4 @@ export { default as AnimatedRoutes } from "./AnimatedRoutes";
 export { default as ContactUs } from "./ContactUs";
 export { default as EasyBuy } from "./EasyBuy";
 export { default as EasySend } from "./EasySend";
+export { default as ContactForm } from "./ContactForm";

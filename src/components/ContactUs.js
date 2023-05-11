@@ -24,7 +24,7 @@ const ContactUs = () => {
                   We spread around the globe{" "}
                   <BsFillRocketTakeoffFill className="text-white rocket" />
                 </h1>
-                <h3 class="text-white text-xl sm:text-3xl my-4 underline">
+                <h3 className="text-white text-xl sm:text-3xl my-4 underline">
                   New Location in Dubai - Marina Gate
                 </h3>
                 <div className="flex flex-col w-full sm:flex-row items-center justify-evenly mt-[70px]">

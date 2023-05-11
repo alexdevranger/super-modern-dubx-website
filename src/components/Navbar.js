@@ -22,7 +22,7 @@ const Navbar = () => {
         <ul className="text-white md:flex hidden list-none flex-row  items-center flex-initial navUl">
           <li className="mx-2 cursor-pointer text-[20px]">
             {/* <Link to="/">home</Link> */}
-            <NavLink exact to="/" activeclassname="active-link">
+            <NavLink to="/" activeclassname="active-link">
               home
             </NavLink>
           </li>
