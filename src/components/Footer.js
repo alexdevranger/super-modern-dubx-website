@@ -21,7 +21,7 @@ const Footer = () => (
           className="w-32"
         />
       </div>
-      <div className="flex flex-1 flex-col sm:flex-row justify-evenly md:items-center items-start content-center flex-wrap sm:mt-0 mt-5 w-full">
+      <div className="flex flex-1 flex-col sm:flex-row justify-evenly md:items-center items-center content-center flex-wrap sm:mt-0 mt-5 w-full">
         <div className="text-white text-base text-left mx-2 cursor-pointer mt-6 md:mt-0">
           <a href="https://explorer.arabianchain.org/#/" target="_blank">
             <p>Explorer</p>
@@ -44,24 +44,21 @@ const Footer = () => (
             <p>Kroki Pool</p>
           </a>
           <a href="https://github.com/DUBXCOIN/go-dubxcoin" target="_blank">
-            <p>Github</p>
+            <p>Github Source</p>
           </a>
           <a href="https://twitter.com/arabianchaintec" target="_blank">
             <p>Twitter</p>
           </a>
         </div>
-        <div className="text-white text-base text-left mx-2 cursor-pointer mt-6 md:mt-0">
+        <div className="text-white text-base text-center md:text-left mx-2 cursor-pointer mt-6 md:mt-0">
           <p>contact us</p>
           <p>info@arabianchain.org</p>
-          <p className="flex flex-row w-[300px] justify-start mt-4">
+          <p className="flex flex-row w-[300px] justify-center md:justify-start mt-4">
             <FaGithub className="mr-[40px] text-[30px] text-white" />
             <FaTwitter className="mr-[30px] text-[30px] text-white" />
             <FaTelegramPlane className="text-[30px] text-white" />
           </p>
         </div>
-        {/* <div className="text-white text-base text-center mx-2 cursor-pointer">
-          Wallets
-        </div> */}
       </div>
     </div>
 

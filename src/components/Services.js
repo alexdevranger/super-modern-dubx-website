@@ -20,7 +20,7 @@ const ServiceCard = ({ color, title, icon, subtitle }) => (
 const Services = () => (
   <div className="flex w-full justify-center items-center gradient-bg-services pt-[100px]">
     <div className="flex mf:flex-row flex-col items-center justify-between md:p-20 py-12 px-4">
-      <div className="flex-1 flex flex-col justify-start items-start">
+      <div className="flex-1 flex flex-col justify-start items-start pl-[30px]">
         <h1
           className="text-3xl sm:text-5xl py-2 font-bold"
           style={{ fontWeight: "700!important" }}

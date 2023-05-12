@@ -26,7 +26,7 @@ const DBank = () => (
         <div className="flex flex-col justify-start items-center h-[24rem] sf:h-[30rem] sm:h-[40rem]">
           <img src={dbank} alt="logo" className="h-auto sm:h-full" />
         </div>
-        <p className="text-left my-2 text-white font-light md:w-9/12 w-11/12 text-base">
+        <p className="text-left my-2 text-white font-light md:w-9/12 w-11/12 text-base pl-[30px]">
           Omni-channel is much more than just providing multiple ways for
           customers to transact. It is about a seamless and consistent
           interaction between customers and their financial institutions across
@@ -39,21 +39,6 @@ const DBank = () => (
         <div className="flex flex-1 flex-col justify-center items-center">
           <h3 className="text-3xl my-4 gradient-title">Super App</h3>
           <div className="w-[90%] p-[10px] m-auto text-center">
-            {/* <img
-              src={floating}
-              alt="float"
-              className="rounded-lg w-[250px] sm:w-[400px]"
-              style={{ textAlign: "center", margin: "auto" }}
-            /> */}
-            {/* <LazyLoadImage
-              effect="blur"
-              loading="lazy"
-              decoding="async"
-              alt="floating"
-              src={floating}
-              className="rounded-lg w-[250px] sm:w-[400px]"
-              style={{ textAlign: "center", margin: "auto" }}
-            /> */}
             <video
               controls={false}
               loop={true}
@@ -78,21 +63,6 @@ const DBank = () => (
         <div className="flex flex-1 flex-col justify-center items-center">
           <h3 className="text-3xl my-4 gradient-title">Digital Wallets</h3>
           <div className="w-[90%] p-[10px] m-auto text-center">
-            {/* <img
-              src={security}
-              alt="security"
-              className="rounded-lg w-[250px] sm:w-[400px]"
-              style={{ textAlign: "center", margin: "auto" }}
-            /> */}
-            {/* <LazyLoadImage
-              effect="blur"
-              loading="lazy"
-              decoding="async"
-              alt="security"
-              src={security}
-              className="rounded-lg w-[250px] sm:w-[400px]"
-              style={{ textAlign: "center", margin: "auto" }}
-            /> */}
             <video
               controls={false}
               loop={true}

@@ -10,7 +10,7 @@ import newlogo from "../images/logo-novi.webp";
 const Project = () => (
   <div className="flex w-full justify-center items-center gradient-bg-services">
     <div className="flex mf:flex-row flex-col items-center justify-between md:p-20 py-12 px-4 my-20">
-      <div className="flex-1 flex flex-col justify-start items-start">
+      <div className="flex-1 flex flex-col justify-start items-start pl-[30px]">
         <h1
           className="text-3xl sm:text-5xl py-2 font-bold flex items-center"
           style={{ fontWeight: "700!important" }}
