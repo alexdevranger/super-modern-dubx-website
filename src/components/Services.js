@@ -29,6 +29,15 @@ const Services = () => (
           <br />
           continue to improve
         </h1>
+        <h3 className="text-white text-2xl mt-4 mb-1 font-bold borderGradient">
+          FASTEST TRANSACTIONS
+        </h3>
+        <h3 className="text-white text-2xl my-1 font-bold borderGradient">
+          SECURITY
+        </h3>
+        <h3 className="text-white text-2xl my-1 font-bold borderGradient">
+          PRIVACY
+        </h3>
         <p className="text-left my-2 text-white font-light md:w-9/12 w-11/12 text-base">
           The best choice for individuals who may not have access to traditional
           banking services.
@@ -37,19 +46,19 @@ const Services = () => (
 
       <div className="flex-1 flex flex-col justify-start items-center">
         <ServiceCard
-          color="bg-[#2952E3]"
+          color="bg-[#8945F8]"
           title="Supply Chain Management"
           icon={<BsShieldFillCheck fontSize={21} className="text-white" />}
           subtitle="By tracking products from the source of raw materials to the end customer, businesses can ensure the authenticity and quality of their products, while also reducing costs and improving efficiency."
         />
         <ServiceCard
-          color="bg-[#8945F8]"
+          color="bg-[#22efeb]"
           title="Identity Verification"
           icon={<BiSearchAlt fontSize={21} className="text-white" />}
           subtitle="With blockchain-based identity verification, individuals can control their own personal data and decide who has access to it."
         />
         <ServiceCard
-          color="bg-[#F84550]"
+          color="bg-[#dd39c1]"
           title="Payment and Remittance"
           icon={<RiHeart2Fill fontSize={21} className="text-white" />}
           subtitle="By using cryptocurrencies or stablecoins, individuals can send and receive payments across borders without the need for intermediaries like banks. "

@@ -28,7 +28,7 @@ const ContactUs = () => {
                   New Location in Dubai - Marina Gate
                 </h3>
                 <div className="flex flex-col w-full sm:flex-row items-center justify-evenly mt-[70px]">
-                  <div className="flex flex-col w-[400px]">
+                  <div className="flex flex-col w-full sm:w-[400px]">
                     <h1
                       className="text-3xl sm:text-4xl py-2 font-bold text-center"
                       style={{ fontWeight: "700!important" }}

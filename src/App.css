@@ -336,6 +336,11 @@ h1 {
 .app-form-button:hover {
   color: #b9134f;
 }
+.borderGradient {
+  border-bottom: 1px solid white;
+    border-image: linear-gradient(0.45turn, rgb(26 249 236), rgb(201 22 154));
+    border-image-slice: 1;
+}
 
 .blockchain {
   background-image: url(../src/images/blockchain-16-9.svg);
