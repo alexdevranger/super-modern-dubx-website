@@ -402,6 +402,12 @@ h1 {
   .screen-body {
     padding: 40px;
   }
+  .rocket {
+    position: absolute;
+    right: 47px;
+    top: 45px;
+    font-size: 54px;
+  }
 
   .screen-body-item {
     padding: 0;

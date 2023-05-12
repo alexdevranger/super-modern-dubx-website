@@ -19,8 +19,8 @@ const ContactUs = () => {
           style={{ width: "100%", height: "100%" }}
           children={() => (
             <div className="flex flex-col xl:flex-row lg:flex-col md:flex-col sm:flex-col min-[300px]:flex-col max-[639px]:flex-col items-center justify-between md:p-20 py-12 px-4 mt-20">
-              <div className="flex flex-col justify-center items-center xl:w-[70%] lg:w-[70%] w:full md:w-[100%] m-auto sm:w-full">
-                <h1 className="text-3xl sm:text-5xl py-2 font-bold text-center relative">
+              <div className="flex flex-col justify-center items-center xl:w-[70%] lg:w-[80%] w:full md:w-[100%] m-auto sm:w-full">
+                <h1 className="text-3xl md:text-5xl py-2 font-bold text-left sm:text-center relative">
                   We spread around the globe{" "}
                   <BsFillRocketTakeoffFill className="text-white rocket" />
                 </h1>

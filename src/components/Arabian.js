@@ -18,7 +18,7 @@ function Arabian() {
         </div>
         <div className="flex-1 flex flex-col justify-start items-start">
           <h1
-            className="text-3xl sm:text-5xl py-2 font-bold"
+            className="text-3xl sm:text-5xl py-2 font-bold text-left"
             style={{ fontWeight: "700!important" }}
           >
             About
