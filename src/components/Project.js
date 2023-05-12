@@ -2,8 +2,7 @@ import React from "react";
 import { BsShieldFillCheck } from "react-icons/bs";
 import { BiSearchAlt } from "react-icons/bi";
 import { RiHeart2Fill } from "react-icons/ri";
-//import cubes from "../images/cubes_optimized.webp";
-import cubes from "../images/gold-coin.png";
+import cubes from "../images/gold-coin_optimized.webp";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
 import newlogo from "../images/logo-novi.webp";
@@ -49,7 +48,7 @@ const Project = () => (
         </p>
       </div>
 
-      <div className="flex-1 flex flex-col justify-start items-center bs mt-[40px] lg:mt-0">
+      <div className="flex-1 flex flex-col justify-start items-center bs mt-[40px] lg:mt-0 rounded-lg">
         <LazyLoadImage
           effect="blur"
           loading="lazy"

@@ -9,10 +9,16 @@ import "react-lazy-load-image-component/src/effects/blur.css";
 const Ai = () => (
   <div className="flex w-full justify-center items-center bg-[#0399DB]">
     <div className="flex mf:flex-row flex-col items-center justify-between md:p-20 py-12 px-4 my-20">
-      <div className="flex-1 flex flex-col justify-start items-center">
-        <img src={ai} alt="logo" className="" />
+      <div className="flex-1 flex flex-col justify-start items-center bs rounded-lg">
+        <LazyLoadImage
+          effect="blur"
+          loading="lazy"
+          decoding="async"
+          alt="AI"
+          src={ai}
+        />
       </div>
-      <div className="flex-1 flex flex-col justify-start items-start pl-[50px]">
+      <div className="flex-1 flex flex-col justify-start items-start pl-[50px] mt-20 mf:mt-0">
         <h1
           className="text-3xl sm:text-5xl py-2 font-bold"
           style={{ fontWeight: "700!important", color: "#3e3cc3" }}

@@ -5,6 +5,11 @@ import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
 import newlogo from "../images/logo-novi.webp";
 import { Link } from "react-router-dom";
+import { FaGithub } from "react-icons/fa";
+import { FaTwitter } from "react-icons/fa";
+import { FaTelegramPlane } from "react-icons/fa";
+import { SlLocationPin } from "react-icons/sl";
+import { SlEnvolope } from "react-icons/sl";
 
 const ContactForm = () => {
   const [fullname, setFullname] = useState("");
@@ -15,41 +20,22 @@ const ContactForm = () => {
       <WaterWave
         style={{ width: "100%", height: "100%" }}
         children={() => (
-          <div className="flex w-full justify-center items-center">
-            <div className="flex flex-col items-center justify-center md:p-20 py-12 px-4 mt-20">
+          <div className="flex flex-col w-full justify-center items-center mt-28 py-12">
+            <h1
+              className="text-3xl sm:text-5xl py-2 font-bold text-center"
+              style={{ fontWeight: "700!important" }}
+            >
+              CONTACT OUR TEAM 24/7
+            </h1>
+            <div className="flex flex-col md:flex-row items-center w-full justify-evenly md:p-10 py-12 px-4 lg:w-[60%]">
               <div className="flex flex-col justify-start items-center">
-                <h1
-                  className="text-3xl sm:text-5xl py-2 font-bold text-center"
-                  style={{ fontWeight: "700!important" }}
-                >
-                  CONTACT OUR TEAM 24/7
-                </h1>
-                <h3 className="text-white text-xl sm:text-2xl my-4">
-                  Send us a message
-                </h3>
                 <div className="background white-glassmorphism">
                   <div className="flex flex-col justify-center items-center">
+                    <h3 className="text-white text-xl sm:text-2xl my-4">
+                      Send us a message
+                    </h3>
                     <div className="screen">
                       <div className="screen-body">
-                        {/* <div className="screen-body-item left">
-                          <h1 className="text-2xl py-2 font-bold text-center m-0">
-                            DUBX PRESALE
-                          </h1>
-
-                          <div className="flex flex-col justify-center items-center w-[200px] h-[200px]">
-                            <LazyLoadImage
-                              effect="blur"
-                              loading="lazy"
-                              decoding="async"
-                              alt="newlogo"
-                              src={newlogo}
-                              width="100%"
-                            />
-                          </div>
-                          <div className="app-contact">
-                            CONTACT INFO : info@arabianchain.org
-                          </div>
-                        </div> */}
                         <div className="screen-body-item">
                           <div className="app-form">
                             <form
@@ -108,6 +94,45 @@ const ContactForm = () => {
                   </div>
                 </div>
               </div>
+              <div className="flex flex-col justify-start items-left">
+                <h3 className="text-white text-xl sm:text-2xl my-4 flex flex-row items-center">
+                  <SlLocationPin className="mr-2 text-[50px]" /> Kingdom of
+                  Bahrain
+                </h3>
+                <p className="text-white ml-[59px]">Office no 302,</p>
+                <p className="text-white ml-[59px]">Building 551, Road 4612,</p>
+                <p className="text-white ml-[59px]">
+                  Block 346, Manama-Water Bay
+                </p>
+                <h3 className="text-white text-xl sm:text-2xl my-4 flex flex-row items-center mt-4">
+                  <SlLocationPin className="mr-2 text-[50px]" />
+                  Dubai, UAE
+                </h3>
+                <p className="text-white ml-[59px]">Jumeirah Living,</p>
+                <p className="text-white ml-[59px]">Marina Gate,</p>
+                <p className="text-white ml-[59px]">M Floor, Dubai Marina</p>
+                <h3 className="text-white text-xl sm:text-xl my-4 flex flex-row items-center mt-4">
+                  <SlEnvolope className="mr-5 text-[40px]" />
+                  info@arabianchain.org
+                </h3>
+              </div>
+            </div>
+            <div
+              className="flex flex-row md:flex-row items-center w-full justify-evenly md:p-10 py-12 px-4 lg:w-[50%] bs rounded-lg"
+              style={{ border: "1px solid #2a2a2a" }}
+            >
+              <a href="https://github.com/DUBXCOIN/go-dubxcoin" target="_blank">
+                <FaGithub className="mr-2 text-[50px] text-white" />
+              </a>
+              <a href="https://twitter.com/arabianchaintec" target="_blank">
+                <FaTwitter className="mr-2 text-[50px] text-white" />
+              </a>
+              <a
+                href="https://web.telegram.org/k/#@DUBXCOIN_GROUP"
+                target="_blank"
+              >
+                <FaTelegramPlane className="mr-2 text-[50px] text-white" />
+              </a>
             </div>
           </div>
         )}

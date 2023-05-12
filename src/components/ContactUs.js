@@ -1,5 +1,5 @@
 import React from "react";
-import location from "../images/newlocation1.png";
+import location from "../images/newlocation_optimized.webp";
 import WaterWave from "react-water-wave";
 import { Link } from "react-router-dom";
 import { BsFillRocketTakeoffFill } from "react-icons/bs";
@@ -67,7 +67,7 @@ const ContactUs = () => {
                 >
                   <span>CONTACT US</span>
                   <span className="text-white ml-4">
-                    <Link to="/about-us">
+                    <Link to="/contact">
                       <BiLinkExternal className="text-white" />
                     </Link>
                   </span>

@@ -107,7 +107,6 @@ const Welcome = () => {
     });
     setWallet({ accounts, balance, chainId });
   };
-  console.log(balanceAddr);
 
   const handleConnect = async () => {
     setIsConnecting(true);

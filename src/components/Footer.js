@@ -3,11 +3,15 @@ import React from "react";
 import logo from "../images/logo.png";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
+import { Link } from "react-router-dom";
+import { FaGithub } from "react-icons/fa";
+import { FaTwitter } from "react-icons/fa";
+import { FaTelegramPlane } from "react-icons/fa";
 
 const Footer = () => (
   <div className="w-full flex md:justify-center justify-between items-center flex-col p-4 gradient-bg-footer pt-[100px]">
     <div className="w-full flex md:flex-row flex-col justify-between items-center my-4">
-      <div className="flex flex-[0.5] justify-center items-center">
+      <div className="flex lg:flex-[0.5] justify-center items-center">
         <LazyLoadImage
           effect="blur"
           loading="lazy"
@@ -39,7 +43,7 @@ const Footer = () => (
           <a href="http://dubx.krokipool.pro/#/" target="_blank">
             <p>Kroki Pool</p>
           </a>
-          <a href="https://github.com/DUBXCOIN" target="_blank">
+          <a href="https://github.com/DUBXCOIN/go-dubxcoin" target="_blank">
             <p>Github</p>
           </a>
           <a href="https://twitter.com/arabianchaintec" target="_blank">
@@ -47,10 +51,13 @@ const Footer = () => (
           </a>
         </div>
         <div className="text-white text-base text-left mx-2 cursor-pointer mt-6 md:mt-0">
-          <p>Office no 302,</p>
-          <p>Building 551, Road 4612,</p>
-          <p>Block 346, Manama-Water Bay,</p>
-          <p>Kingdom of Bahrain</p>
+          <p>contact us</p>
+          <p>info@arabianchain.org</p>
+          <p className="flex flex-row w-[300px] justify-start mt-4">
+            <FaGithub className="mr-[40px] text-[30px] text-white" />
+            <FaTwitter className="mr-[30px] text-[30px] text-white" />
+            <FaTelegramPlane className="text-[30px] text-white" />
+          </p>
         </div>
         {/* <div className="text-white text-base text-center mx-2 cursor-pointer">
           Wallets

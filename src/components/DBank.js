@@ -4,6 +4,8 @@ import { BiSearchAlt } from "react-icons/bi";
 import { RiHeart2Fill } from "react-icons/ri";
 import dbank from "../images/digital_bank_optimized.webp";
 import floating from "../images/floating.gif";
+import floating1 from "../images/floating1.mp4";
+import security1 from "../images/security.mp4";
 import security from "../images/security.gif";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
@@ -43,7 +45,7 @@ const DBank = () => (
               className="rounded-lg w-[250px] sm:w-[400px]"
               style={{ textAlign: "center", margin: "auto" }}
             /> */}
-            <LazyLoadImage
+            {/* <LazyLoadImage
               effect="blur"
               loading="lazy"
               decoding="async"
@@ -51,7 +53,20 @@ const DBank = () => (
               src={floating}
               className="rounded-lg w-[250px] sm:w-[400px]"
               style={{ textAlign: "center", margin: "auto" }}
-            />
+            /> */}
+            <video
+              controls={false}
+              loop={true}
+              autoPlay={true}
+              width="400"
+              height="auto"
+              muted
+              playsInline
+              className="rounded-lg w-[250px] sm:w-[400px] text-center m-auto"
+            >
+              <source src={floating1} type="video/mp4"></source>
+              Your browser does not support the video tag.
+            </video>
           </div>
           <p className="text-white w-full pb-8 pt-4 px-[10%]">
             Launch your own Super App tailored to your bank and market within
@@ -69,7 +84,7 @@ const DBank = () => (
               className="rounded-lg w-[250px] sm:w-[400px]"
               style={{ textAlign: "center", margin: "auto" }}
             /> */}
-            <LazyLoadImage
+            {/* <LazyLoadImage
               effect="blur"
               loading="lazy"
               decoding="async"
@@ -77,7 +92,20 @@ const DBank = () => (
               src={security}
               className="rounded-lg w-[250px] sm:w-[400px]"
               style={{ textAlign: "center", margin: "auto" }}
-            />
+            /> */}
+            <video
+              controls={false}
+              loop={true}
+              autoPlay={true}
+              width="400"
+              height="auto"
+              muted
+              playsInline
+              className="rounded-lg w-[250px] sm:w-[400px] text-center m-auto"
+            >
+              <source src={security1} type="video/mp4"></source>
+              Your browser does not support the video tag.
+            </video>
           </div>
           <p className="text-white w-full pb-8 pt-4 px-[10%]">
             Fast-to-market financial offerings across deposits, credit, and
