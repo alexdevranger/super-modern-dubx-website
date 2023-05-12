@@ -22,8 +22,20 @@ const EasySend = () => {
       }
     };
 
-    const refreshChain = (chainId) => {
-      setWallet((wallet) => ({ ...wallet, chainId }));
+    const refreshChain = async (chainId) => {
+      //setWallet((wallet) => ({ ...wallet, chainId }));
+      await window.ethereum
+        .request({
+          method: "eth_requestAccounts",
+        })
+        .then((accounts) => {
+          setError(false);
+          updateWallet(accounts);
+        })
+        .catch((err) => {
+          setError(true);
+          setErrorMessage(err.message);
+        });
     };
 
     const getProvider = async () => {

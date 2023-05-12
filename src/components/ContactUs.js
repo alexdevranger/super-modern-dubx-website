@@ -32,7 +32,7 @@ const ContactUs = () => {
   console.log(waterWaveRef.current);
   return (
     <div className="flex w-full justify-center items-center gradient-bg-services">
-      <div style={{ width: "100%", minHeight: "100vh", overflow: "hidden" }}>
+      <div style={{ width: "100%", overflow: "hidden" }}>
         {/* {webglSupported ? (
           <WaterWave
             ref={waterWaveRef}
@@ -83,7 +83,7 @@ const ContactUs = () => {
               </div>
             </div>
             <h1
-              className="flex flex-row items-center justify-center text-2xl sm:text-3xl py-2 font-bold text-center mt-10"
+              className="flex flex-row items-center justify-center text-2xl sm:text-3xl py-2 font-bold text-center mt-20"
               style={{ fontWeight: "700!important" }}
             >
               <span>CONTACT US</span>
