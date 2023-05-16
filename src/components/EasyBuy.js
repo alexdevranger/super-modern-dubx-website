@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
-import newlogo from "../images/logo-novi.webp";
+import newlogo from "../images/gradientLogo.webp";
 import WaterWave from "react-water-wave";
 
 const EasyBuy = () => {
@@ -38,7 +38,7 @@ const EasyBuy = () => {
                         DUBX PRESALE
                       </h1>
 
-                      <div className="flex flex-col justify-center items-center w-[200px] h-[200px]">
+                      <div className="flex flex-col justify-center items-center w-[150px] h-[150px] text-center m-auto">
                         <LazyLoadImage
                           effect="blur"
                           loading="lazy"

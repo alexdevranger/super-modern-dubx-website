@@ -1,6 +1,6 @@
 import React from "react";
 
-import logo from "../images/logo.png";
+import logo from "../images/gradientLogo.webp";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
 import { Link } from "react-router-dom";
