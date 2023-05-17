@@ -4,7 +4,7 @@ import { BiSearchAlt } from "react-icons/bi";
 import { RiHeart2Fill } from "react-icons/ri";
 
 const ServiceCard = ({ color, title, icon, subtitle }) => (
-  <div className="flex flex-row justify-start items-start white-glassmorphism p-3 m-2 cursor-pointer hover:shadow-xl my-[40px]">
+  <div className="flex flex-row justify-start items-start white-glassmorphism p-3 m-2 hover:shadow-xl my-[40px]">
     <div
       className={`w-10 h-10 rounded-full flex justify-center items-center ${color}`}
     >
@@ -29,15 +29,23 @@ const Services = () => (
           <br />
           continue to improve
         </h1>
-        <h3 className="text-white text-2xl mt-4 mb-1 font-bold borderGradient">
-          FASTEST TRANSACTIONS
-        </h3>
-        <h3 className="text-white text-2xl my-1 font-bold borderGradient">
-          SECURITY
-        </h3>
-        <h3 className="text-white text-2xl my-1 font-bold borderGradient">
-          PRIVACY
-        </h3>
+        <ul id="servicesUl" className="mt-4 mb-1">
+          <li className="flex">
+            <h3 className="text-white text-2xl my-1 font-bold borderGradient">
+              FASTEST TRANSACTIONS
+            </h3>
+          </li>
+          <li className="flex">
+            <h3 className="text-white text-2xl my-1 font-bold borderGradient">
+              SECURITY
+            </h3>
+          </li>
+          <li className="flex">
+            <h3 className="text-white text-2xl my-1 font-bold borderGradient">
+              PRIVACY
+            </h3>
+          </li>
+        </ul>
         <p className="text-left my-2 text-white font-light md:w-9/12 w-11/12 text-base">
           The best choice for individuals who may not have access to traditional
           banking services.

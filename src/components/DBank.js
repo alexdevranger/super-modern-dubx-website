@@ -23,8 +23,12 @@ const DBank = () => (
         <h3 className="text-white text-xl sm:text-3xl my-4 text-center">
           Digital bank + Payment Processor
         </h3>
-        <div className="flex flex-col justify-start items-center h-[24rem] sf:h-[30rem] sm:h-[40rem]">
-          <img src={dbank} alt="logo" className="h-auto sm:h-full" />
+        <div className="flex flex-col justify-start items-center h-[18rem] sf:h-[20rem] sm:h-[30rem]">
+          <img
+            src={dbank}
+            alt="d-bank"
+            className="w-auto h-[235px] sm:h-[374px] md:h-[450px]"
+          />
         </div>
         <p className="text-left my-2 text-white font-light md:w-9/12 w-11/12 text-base pl-[30px]">
           Omni-channel is much more than just providing multiple ways for

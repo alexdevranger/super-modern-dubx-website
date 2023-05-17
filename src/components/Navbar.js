@@ -16,7 +16,9 @@ const Navbar = () => {
   return (
     <nav className="w-full flex justify-end items-center p-8 relative">
       <div className="absolute left-0">
-        <img src={logo} alt="logo" className="w-48 lg:w-64 cursor-pointer" />
+        <NavLink to="/" activeclassname="active-link">
+          <img src={logo} alt="logo" className="w-48 lg:w-64 cursor-pointer" />
+        </NavLink>
       </div>
       <div className="flex justify-end items-center">
         <ul className="text-white md:flex hidden list-none flex-row items-center navUl">

@@ -30,7 +30,7 @@ const ContactForm = () => {
         <div className="flex flex-col md:flex-row items-center w-full justify-evenly md:p-10 py-12 px-4 lg:w-[60%]">
           <div className="flex flex-col justify-start items-center">
             <div className="background white-glassmorphism">
-              <div className="flex flex-col justify-center items-center">
+              <div className="flex flex-col justify-center items-center sm:mr-4">
                 <h3 className="text-white text-xl sm:text-2xl my-4">
                   Send us a message
                 </h3>
@@ -94,7 +94,7 @@ const ContactForm = () => {
               </div>
             </div>
           </div>
-          <div className="flex flex-col justify-start items-left">
+          <div className="flex flex-col justify-start items-left ml-4">
             <h3 className="text-white text-xl sm:text-2xl my-4 flex flex-row items-center">
               <SlLocationPin className="mr-2 text-[50px]" /> Kingdom of Bahrain
             </h3>

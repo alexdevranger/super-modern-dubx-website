@@ -9,7 +9,12 @@ import "react-lazy-load-image-component/src/effects/blur.css";
 const Ai = () => (
   <div className="flex w-full justify-center items-center bg-[#0399DB]">
     <div className="flex mf:flex-row flex-col items-center justify-between md:p-20 py-12 px-4 my-20">
-      <div className="flex-1 flex flex-col justify-start items-center bs rounded-lg">
+      <div
+        className="flex-1 flex flex-col justify-start items-center rounded-lg"
+        style={{
+          boxShadow: "0 8px 6px rgb(66 66 66 / 88%), 0 8px 12px rgb(98 98 98)",
+        }}
+      >
         <LazyLoadImage
           effect="blur"
           loading="lazy"
@@ -25,7 +30,7 @@ const Ai = () => (
         >
           AI & Blockchain
         </h1>
-        <h3 className="text-white text-3xl my-4">
+        <h3 className="text-white text-2xl sm:text-3xl my-4">
           We want to train our AI to improve our blockchain
         </h3>
         <p className="text-left my-2 text-white font-light md:w-9/12 w-11/12 text-base">

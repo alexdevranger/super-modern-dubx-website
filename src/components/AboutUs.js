@@ -19,7 +19,7 @@ const AboutUs = () => {
           >
             ArabianChain Team
           </h1>
-          <h3 className="text-white text-3xl my-4">
+          <h3 className="text-white text-2xl sm:text-3xl my-4">
             Our blockchain can transform your business
           </h3>
           <p className="text-left my-2 text-white font-light md:w-9/12 w-11/12 text-base">

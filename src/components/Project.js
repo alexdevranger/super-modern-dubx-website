@@ -30,7 +30,7 @@ const Project = () => (
             />
           </div> */}
         </h1>
-        <h3 className="text-white text-3xl my-4">
+        <h3 className="text-white text-2xl sm:text-3xl my-4">
           It is an open source, community-based project
         </h3>
 

@@ -7,7 +7,7 @@ function Arabian() {
   return (
     <div className="flex w-full justify-center items-center">
       <div className="flex mf:flex-row flex-col items-center justify-between md:p-20 py-12 px-4 mt-20">
-        <div className="flex-1 flex flex-col justify-start items-center">
+        <div className="flex-1 flex flex-col justify-start items-center w-[70%]">
           <LazyLoadImage
             effect="blur"
             loading="lazy"
@@ -25,7 +25,7 @@ function Arabian() {
             <br />
             ArabianChain Technologies
           </h1>
-          <h3 className="text-white text-3xl my-4">
+          <h3 className="text-white text-2xl sm:text-3xl my-4">
             It is the first public, decentralized and consensus-driven
             blockchain in the MENA region
           </h3>

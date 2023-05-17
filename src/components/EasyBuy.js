@@ -26,7 +26,7 @@ const EasyBuy = () => {
             >
               Easy BUY DUBX
             </h1>
-            <h3 className="text-white text-xl sm:text-2xl my-4">
+            <h3 className="text-white text-xl sm:text-2xl my-4 text-center">
               Fill the form and you will get the offer
             </h3>
             <div className="background white-glassmorphism">
